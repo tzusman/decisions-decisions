@@ -1,0 +1,92 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body {
+  overflow-x: hidden;
+}
+body {
+  position: relative;
+}
+
+a,
+a:hover,
+a:focus,
+button,
+button:hover,
+button:focus {
+  outline: none;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+.opacity-70 {
+  opacity: 0.6;
+}
+.opacity-80 {
+  opacity: 0.6;
+}
+.opacity-90 {
+  opacity: 0.6;
+}
+
+table {
+  @apply border-collapse table-auto w-full whitespace-no-wrap bg-white relative;
+}
+
+thead th {
+  @apply bg-gray-100 sticky top-0 border-b border-gray-200 px-3 py-4 text-gray-600 font-bold tracking-wider uppercase text-xs cursor-pointer;
+}
+
+tfoot td {
+  @apply bg-gray-100 sticky top-0 px-3 py-3 text-gray-500 font-bold tracking-wider uppercase text-xs text-center;
+
+  .visible-on-hover {
+    @apply hidden;
+  }
+  &:hover .visible-on-hover {
+    @apply block;
+  }
+}
+
+tbody td {
+  @apply border-dashed border-t border-gray-200 py-3;
+
+  span {
+    @apply text-gray-700 text-center;
+
+    &.score {
+      @apply inline-block rounded-full bg-green-300 self-center mx-auto;
+    }
+  }
+}
+
+.button-wrapper {
+  @apply overflow-x-auto bg-white rounded-lg shadow overflow-y-auto ml-auto flex;
+
+  @media (min-width: 640px) {
+    width: 'fit-content';
+  }
+
+  > .button {
+    @apply py-3 px-6 text-gray-500 font-bold tracking-wider uppercase text-xs flex-1;
+
+    &.active {
+      @apply bg-gray-100 text-gray-600 border-gray-300;
+
+      &:first-child {
+        @apply border-r;
+      }
+
+      &:last-child {
+        @apply border-l;
+      }
+    }
+
+    &.inactive {
+      @apply cursor-pointer;
+    }
+  }
+}
